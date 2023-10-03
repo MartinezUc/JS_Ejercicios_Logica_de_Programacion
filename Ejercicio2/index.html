@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+
+    <script>
+      var limite = prompt(
+        "Ingresa la cantidad de caracteres para recortar la cadena:"
+      );
+
+      var cadena = "Hola como estas";
+
+      function dividirCadena(cadena, limite) {
+        if (cadena.length > limite) {
+          console.log(`Cadena dividida: "${cadena.substring(0, limite)}"`);
+        } else {
+          console.info(
+            `La cadena es muy pequeña en cantidad de caracteres a comparacion del limite ingresado. "${cadena}"`
+          );
+        }
+      }
+
+      dividirCadena(cadena, limite);
+    </script>
+  </head>
+  <body></body>
+</html>

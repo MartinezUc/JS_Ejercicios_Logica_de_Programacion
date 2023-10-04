@@ -3,24 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 1</title>
+    <title>Ejercicio 3</title>
 
     <script>
-      var cadena = prompt("Ingresa una cadena de texto:");
+      function separarTextos(cadena, separador) {
+        var arrayCadenas = cadena.split(separador);
 
-      function contadorC(cadena) {
-        if (!cadena) {
-          console.warn("No ingresaste nigún texto");
-        } else {
-          console.info(
-            `La cadena ingresada: "${cadena}" tiene: ${cadena.length} caracteres.`
-          );
+        for (var i = 0; i < arrayCadenas.length; i++) {
+          console.log(arrayCadenas[i]);
         }
       }
 
-      contadorC(cadena);
-      // contadorC("Hola como estas");
+      var cadena =
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat magnam voluptatem blanditiis error hic odit beatae harum rem quod porro rerum, aspernatur impedit dolorem vel similique praesentium dolores quam molestiae.";
+
+      separarTextos(cadena, " ");
     </script>
   </head>
   <body></body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+
+    <script>
+      function separarTextos(cadena, separador) {
+        var arrayCadenas = cadena.split(separador);
+        return arrayCadenas;
+      }
+
+      var cadena =
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat magnam voluptatem blanditiis error hic odit beatae harum rem quod porro rerum, aspernatur impedit dolorem vel similique praesentium dolores quam molestiae.";
+
+      var arraySeparado = separarTextos(cadena, " ");
+      console.log(arraySeparado);
+    </script>
+  </head>
+  <body></body>
+</html> -->

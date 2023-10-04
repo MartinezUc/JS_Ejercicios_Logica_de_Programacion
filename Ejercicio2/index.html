@@ -6,19 +6,54 @@
     <title>Ejercicio 2</title>
 
     <script>
-      var limite = prompt(
-        "Ingresa la cantidad de caracteres para recortar la cadena:"
-      );
-
-      var cadena = "Hola como estas";
-
+      var cadena = "hola como estas";
       function dividirCadena(cadena, limite) {
-        if (cadena.length > limite) {
+        if (limite > 0) {
           console.log(`Cadena dividida: "${cadena.substring(0, limite)}"`);
+        } else if (limite.trim() == "") {
+          console.warn("No ingresaste un limite");
         } else {
           console.info(
-            `La cadena es muy pequeña en cantidad de caracteres a comparacion del limite ingresado. "${cadena}"`
+            `La cadena no se puede dividir con el limite ingresado. RESULTADO: ""`
           );
+        }
+      }
+
+      dividirCadena(cadena, 8);
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+
+    <script>
+      var limite;
+      var cadena;
+      function dividirCadena(cadena, limite) {
+        var limite = prompt(
+          "Ingresa la cantidad de caracteres para recortar la cadena:"
+        );
+
+        if (!isNaN(limite)) {
+          var cadena = "Hola como estas";
+
+          if (limite > 0) {
+            console.log(`Cadena dividida: "${cadena.substring(0, limite)}"`);
+          } else if (limite.trim() == "") {
+            console.warn("No ingresaste un limite");
+          } else {
+            console.info(
+              `La cadena no se puede dividir con el limite ingresado. RESULTADO: ""`
+            );
+          }
+        } else {
+          console.warn("Ingresa un numero.");
         }
       }
 
@@ -26,4 +61,4 @@
     </script>
   </head>
   <body></body>
-</html>
+</html> -->

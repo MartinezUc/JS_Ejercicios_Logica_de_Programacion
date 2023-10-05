@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 27</title>
+  </head>
+  <body>
+    <script>
+      function Pelicula(
+        id_imdb,
+        titulo,
+        director,
+        año_estreno,
+        paises_origen,
+        generos,
+        calificacion_imdb
+      ) {
+        this.id_imdb = id_imdb;
+        this.titulo = titulo;
+        this.director = director;
+        this.año_estreno = año_estreno;
+        this.paises_origen = paises_origen;
+        this.generos = generos;
+        this.calificacion_imdb = calificacion_imdb;
+
+        this.validar = function () {
+          const generosAceptados = [
+            "Action",
+            "Adult",
+            "Adventure",
+            "Animation",
+            "Biography",
+            "Comedy",
+            "Crime",
+            "Documentary",
+            "Drama",
+            "Family",
+            "Fantasy",
+            "Film Noir",
+            "Game-Show",
+            "History",
+            "Horror",
+            "Musical",
+            "Music",
+            "Mystery",
+            "News",
+            "Reality-TV",
+            "Romance",
+            "Sci-Fi",
+            "Short",
+            "Sport",
+            "Talk-Show",
+            "Thriller",
+            "War",
+            "Western",
+          ];
+
+          const idPattern = /^[A-Za-z]{2}\d{7}$/;
+
+          return (
+            idPattern.test(this.id_imdb) &&
+            this.titulo.length <= 100 &&
+            this.director.length <= 50 &&
+            Number.isInteger(this.año_estreno) &&
+            this.año_estreno.toString().length === 4 &&
+            Array.isArray(this.paises_origen) &&
+            Array.isArray(this.generos) &&
+            this.generos.every((g) => generosAceptados.includes(g)) &&
+            this.calificacion_imdb >= 0 &&
+            this.calificacion_imdb <= 10 &&
+            Math.abs(this.calificacion_imdb * 10) % 1 === 0
+          );
+        };
+
+        this.ficha_tecnica = function () {
+          if (this.validar()) {
+            return `Ficha Técnica de la Película:\nID IMDB: ${
+              this.id_imdb
+            }\nTítulo: ${this.titulo}\nDirector: ${
+              this.director
+            }\nAño de Estreno: ${
+              this.año_estreno
+            }\nPaíses de Origen: ${this.paises_origen.join(
+              ", "
+            )}\nGéneros: ${this.generos.join(
+              ", "
+            )}\nCalificación IMDb: ${this.calificacion_imdb.toFixed(1)}`;
+          } else {
+            return "Datos de la película no válidos.";
+          }
+        };
+      }
+
+      // Ejemplo de uso
+      const peliculas = [
+        new Pelicula(
+          "tt1234567",
+          "Pelicula 1",
+          "Director 1",
+          2020,
+          ["EEUU"],
+          ["Action", "Adventure"],
+          7.5
+        ),
+        new Pelicula(
+          "tt9876543",
+          "Pelicula 2",
+          "Director 2",
+          2019,
+          ["España"],
+          ["Comedy", "Drama"],
+          8.2
+        ),
+        new Pelicula(
+          "tt5555555",
+          "Pelicula 3",
+          "Director 3",
+          2022,
+          ["EEUU"],
+          ["Action", "Sci-Fi"],
+          9.0
+        ),
+      ];
+
+      peliculas.forEach((pelicula) => {
+        console.log(pelicula.ficha_tecnica());
+        console.log("------------------------");
+      });
+    </script>
+  </body>
+</html>

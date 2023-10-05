@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 25</title>
+  </head>
+  <body>
+    <script>
+      const eliminarDuplicados = (miArray) => {
+        let conjunto = new Set(miArray);
+        let resultado = [...conjunto];
+        console.info(resultado);
+      };
+
+      eliminarDuplicados(["x", 10, "x", 2, "10", 10, true, true]);
+    </script>
+  </body>
+</html>

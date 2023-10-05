@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 27</title>
+  </head>
+  <body>
+    <script>
+      class Pelicula {
+        constructor(id, titulo, director, año, paises, generos, calificacion) {
+          this.id = id;
+          this.titulo = titulo;
+          this.director = director;
+          this.año = año;
+          this.paises = paises;
+          this.generos = generos;
+          this.calificacion = calificacion;
+          (this.validar = function () {
+            return (
+              this.id.match(/^[A-Za-z]{2}\d{7}$/) &&
+              this.titulo.length <= 100 &&
+              this.director.length <= 50 &&
+              Number.isInteger(this.año) &&
+              this.año.toString().length === 4 &&
+              Array.isArray(this.paises) &&
+              Array.isArray(this.generos) &&
+              this.generos.every((g) =>
+                [
+                  "Action",
+                  "Adult",
+                  "Adventure",
+                  "Animation",
+                  "Biography",
+                  "Comedy",
+                  "Crime",
+                  "Documentary",
+                  "Drama",
+                  "Family",
+                  "Fantasy",
+                  "Film Noir",
+                  "Game-Show",
+                  "History",
+                  "Horror",
+                  "Musical",
+                  "Music",
+                  "Mystery",
+                  "News",
+                  "Reality-TV",
+                  "Romance",
+                  "Sci-Fi",
+                  "Short",
+                  "Sport",
+                  "Talk-Show",
+                  "Thriller",
+                  "War",
+                  "Western",
+                ].includes(g)
+              ) &&
+              this.calificacion >= 0 &&
+              this.calificacion <= 10 &&
+              (this.calificacion * 10) % 1 === 0
+            );
+          }),
+            (this.ficha_tecnica = function () {
+              return this.validar()
+                ? `Ficha Técnica de la Película:\nID IMDB: ${
+                    this.id
+                  }\nTítulo: ${this.titulo}\nDirector: ${
+                    this.director
+                  }\nAño de Estreno: ${
+                    this.año
+                  }\nPaíses de Origen: ${this.paises.join(
+                    ", "
+                  )}\nGéneros: ${this.generos.join(
+                    ", "
+                  )}\nCalificación IMDb: ${this.calificacion.toFixed(1)}`
+                : "Datos de la película no válidos";
+            });
+        }
+      }
+    </script>
+  </body>
+</html>

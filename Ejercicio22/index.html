@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 22</title>
+  </head>
+  <body>
+    <script>
+      const numeroMayorMenor = (miArray) => {
+        let mayor = miArray[0];
+        let menor = miArray[0];
+
+        for (let i = 0; i < miArray.length; i++) {
+          if (miArray[i] > mayor) {
+            mayor = miArray[i];
+          } else if (miArray[i] < menor) {
+            menor = miArray[i];
+          }
+        }
+        console.log(`[${mayor}, ${menor}]`);
+      };
+
+      numeroMayorMenor([1, 4, 5, 99, -60]);
+    </script>
+  </body>
+</html>

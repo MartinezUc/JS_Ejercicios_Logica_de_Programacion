@@ -7,13 +7,13 @@
   </head>
   <body>
     <script>
-      const validarNombre = (nombre = "") => {
-        let valNombre = /^[a-zA-Z\s']+$/;
-        let esValido = valNombre.test(nombre);
+      const validarCorreo = (correo = "") => {
+        let valCorreo = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        let esValido = valCorreo.test(correo);
         console.info(esValido);
       };
 
-      validarNombre("Martin Fidel");
+      validarCorreo("Martin_Fidel@gmail.com");
     </script>
   </body>
 </html>

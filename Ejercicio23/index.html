@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 22</title>
+  </head>
+  <body>
+    <script>
+      const objeto = (miArray = []) => {
+        let objResultado = {
+          pares: [],
+          impares: [],
+        };
+
+        for (let i = 0; i < miArray.length; i++) {
+          if (miArray[i] % 2 === 0) {
+            objResultado.pares.push(miArray[i]); // Agregar números pares al arreglo 'pares'
+          } else {
+            objResultado.impares.push(miArray[i]); // Agregar números impares al arreglo 'impares'
+          }
+        }
+        console.log(objResultado);
+      };
+
+      objeto([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+    </script>
+  </body>
+</html>

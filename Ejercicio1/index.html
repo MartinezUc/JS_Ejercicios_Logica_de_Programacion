@@ -4,23 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ejercicio 1</title>
-
-    <script>
-      var cadena = prompt("Ingresa una cadena de texto:");
-
-      function contadorC(cadena) {
-        if (!cadena) {
-          console.warn("No ingresaste nigún texto");
-        } else {
-          console.info(
-            `La cadena ingresada: "${cadena}" tiene: ${cadena.length} caracteres.`
-          );
-        }
-      }
-
-      contadorC(cadena);
-      // contadorC("Hola como estas");
-    </script>
   </head>
-  <body></body>
+  <body>
+    <script>
+      const contadorC = (cadena = "") =>
+        !cadena
+          ? console.warn("No ingresaste nigún texto")
+          : console.info(
+              `La cadena ingresada: "${cadena}" tiene: ${cadena.length} caracteres.`
+            );
+
+      contadorC("Hola Mundo");
+    </script>
+  </body>
 </html>

@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 1</title>
-
+    <title>Ejercicio 4</title>
+  </head>
+  <body>
     <script>
-      var cadena = prompt("Ingresa una cadena de texto:");
-
-      function contadorC(cadena) {
+      const repetidorTexto = (cadena = "", cantidad = undefined) => {
         if (!cadena) {
-          console.warn("No ingresaste nigún texto");
-        } else {
-          console.info(
-            `La cadena ingresada: "${cadena}" tiene: ${cadena.length} caracteres.`
+          return console.warn("No ingresaste un texto.");
+        } else if (cantidad === undefined) {
+          return console.warn(
+            "No ingresaste la cantidad de veces a repetir el texto."
           );
         }
-      }
+        for (i = 1; i <= cantidad; i++) {
+          console.info(`${cadena}, ${i}`);
+        }
+      };
 
-      contadorC(cadena);
-      // contadorC("Hola como estas");
+      repetidorTexto("Hola Mundo", 5);
     </script>
-  </head>
-  <body></body>
+  </body>
 </html>

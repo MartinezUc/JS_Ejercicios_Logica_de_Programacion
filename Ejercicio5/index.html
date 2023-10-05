@@ -3,24 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio 1</title>
-
-    <script>
-      var cadena = prompt("Ingresa una cadena de texto:");
-
-      function contadorC(cadena) {
-        if (!cadena) {
-          console.warn("No ingresaste nigún texto");
-        } else {
-          console.info(
-            `La cadena ingresada: "${cadena}" tiene: ${cadena.length} caracteres.`
-          );
-        }
-      }
-
-      contadorC(cadena);
-      // contadorC("Hola como estas");
-    </script>
+    <title>Ejercicio 5</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      const invertirPalabra = (cadena = "") =>
+        !cadena
+          ? console.warn("No ingresaste una cadena de texto")
+          : console.info(cadena.split("").reverse().join(""));
+
+      invertirPalabra("Martin Fidel Martinez Uc");
+    </script>
+  </body>
 </html>

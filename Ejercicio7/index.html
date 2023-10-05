@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 7</title>
+  </head>
+  <body>
+    <script>
+      const validarPalindromo = (cadena = "") => {
+        if (!cadena) {
+          console.warn("No se ingreso una cadena o texto");
+        }
+
+        cadena = cadena.toLowerCase();
+        let cadenaAlreves = cadena.split("").reverse().join("");
+        return cadenaAlreves === cadena
+          ? console.info(`La palabra "${cadena}" si es palindroma.`)
+          : console.info(`La palabra "${cadena}" no es palindroma.`);
+      };
+
+      validarPalindromo("salas");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 8</title>
+  </head>
+  <body>
+    <script>
+      const patronTexto = (texto = "", patron = "") => {
+        let patronEscapado = patron.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        let regex = new RegExp(patronEscapado, "g");
+        let resultado = texto.replace(regex, "");
+
+        return resultado;
+      };
+
+      patronEliminado = patronTexto("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
+      console.info(patronEliminado);
+    </script>
+  </body>
+</html>

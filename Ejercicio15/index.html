@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 15</title>
+  </head>
+  <body>
+    <script>
+      const convertirBinarioDecimal = (numero = undefined, base = undefined) =>
+        base === 2
+          ? console.info(`${parseInt(numero, 2)} base 10`)
+          : console.info(`${numero.toString(2)} base 2`);
+
+      convertirBinarioDecimal(1000, 10);
+    </script>
+  </body>
+</html>
